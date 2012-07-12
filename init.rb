@@ -1,6 +1,5 @@
 require 'redmine'
 require 'dispatcher'
-require 'redmine_spent_time_column/hooks'
 
 Dispatcher.to_prepare do
   Issue.send(:include, RedmineSpentTimeColumn::Patches::IssuePatch) unless Issue.include?(RedmineSpentTimeColumn::Patches::IssuePatch)
